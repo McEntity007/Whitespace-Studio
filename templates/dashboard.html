@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | WhiteSpace Studio{% endblock title %}
+
+{% block body %}
+<div class="container mt-5">
+    <!-- Welcome Message -->
+    <div class="row mb-4">
+        <div class="col">
+            <h2 class="mb-3">Welcome, {{ user.username }}!</h2>
+            <p class="text-muted">Here's an overview of your account.</p>
+        </div>
+    </div>
+
+    <!-- Dashboard Widgets -->
+    <div class="row g-4">
+        <!-- Widget 1: Account Overview -->
+        <div class="col-md-6 col-lg-8"> <!-- Increased horizontal size -->
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-user me-2"></i>Account Overview</h5>
+                    <ul class="list-unstyled">
+                        <li><strong>Username:</strong> {{ user.username }}</li>
+                        <li><strong>Email:</strong> {{ user.email }}</li>
+                        <li><strong>Joined On:</strong> {{ user.date_joined|date:"M d, Y" }}</li>
+                    </ul>
+                    <a href="/logout" class="btn btn-primary btn-sm mt-3">Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Widget 2: Quick Actions -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-bolt me-2"></i>Quick Actions</h5>
+                    <div class="d-grid gap-2">
+                        <a href="/services/interior" class="btn btn-outline-primary">Book Interior Design</a>
+                        <a href="/services/exterior" class="btn btn-outline-primary">Book Exterior Design</a>
+                        <a href="/contact" class="btn btn-outline-primary">Contact Support</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

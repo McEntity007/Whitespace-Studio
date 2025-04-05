@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Customization{% endblock title %}
+
+{% block body %}
+<!-- Hero Section -->
+<div class="container-fluid py-4 bg-white">
+    <div class="container text-center py-3">
+        <h1 class="display-5 fw-bold text-primary mb-2">Customization</h1>
+        <p class="lead text-muted">Personalized designs tailored to your unique vision</p>
+    </div>
+</div>
+
+<!-- Service Details -->
+<div class="container py-4">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="card border-0 shadow-sm">
+                <img src="{% static 'p3.jpg' %}" class="card-img-top rounded-top" alt="Customization">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="ps-lg-4">
+                <h2 class="fw-bold text-primary mb-3">Make It Uniquely Yours</h2>
+                <p class="text-muted mb-4">We specialize in crafting bespoke furniture, decor, and design elements that reflect your personal style and functional needs.</p>
+                
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2">
+                        <i class="fas fa-check-circle text-primary me-2"></i>
+                        <span class="text-muted">Custom Furniture Design & Fabrication</span>
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check-circle text-primary me-2"></i>
+                        <span class="text-muted">Unique Decor Pieces & Art Installations</span>
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check-circle text-primary me-2"></i>
+                        <span class="text-muted">Tailor-Made Design Solutions</span>
+                    </li>
+                </ul>
+                
+                <a href="/contact" class="btn btn-primary px-4 py-2 fw-semibold">Get Started</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Customization Process -->
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <h3 class="fw-semibold text-primary mb-3">Our Customization Process</h3>
+                    <div class="row">
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="text-center">
+                                <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                                    <i class="fas fa-comments text-primary fa-2x"></i>
+                                </div>
+                                <h5 class="mt-3 fw-semibold">Consultation</h5>
+                                <p class="small text-muted">We listen to understand your vision and requirements</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="text-center">
+                                <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                                    <i class="fas fa-pencil-ruler text-primary fa-2x"></i>
+                                </div>
+                                <h5 class="mt-3 fw-semibold">Design</h5>
+                                <p class="small text-muted">Creating detailed plans and 3D visualizations</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                                    <i class="fas fa-hands text-primary fa-2x"></i>
+                                </div>
+                                <h5 class="mt-3 fw-semibold">Crafting</h5>
+                                <p class="small text-muted">Skilled artisans bring your custom pieces to life</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Portfolio Showcase -->
+{% comment %} <div class="container py-4">
+    <h3 class="fw-semibold text-primary text-center mb-4">Custom Creations</h3>
+    <div class="row g-3">
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm">
+                <img src="https://source.unsplash.com/600x400/?custom-furniture" class="card-img-top" alt="Custom Furniture">
+                <div class="card-body">
+                    <h5 class="fw-semibold text-primary">Bespoke Furniture</h5>
+                    <p class="small text-muted">Handcrafted pieces designed for your space</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm">
+                <img src="https://source.unsplash.com/600x400/?unique-decor" class="card-img-top" alt="Unique Decor">
+                <div class="card-body">
+                    <h5 class="fw-semibold text-primary">Signature Decor</h5>
+                    <p class="small text-muted">One-of-a-kind decorative elements</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm">
+                <img src="https://source.unsplash.com/600x400/?custom-design" class="card-img-top" alt="Custom Design">
+                <div class="card-body">
+                    <h5 class="fw-semibold text-primary">Tailored Solutions</h5>
+                    <p class="small text-muted">Perfect fits for challenging spaces</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> {% endcomment %}
+
+<!-- CTA Section -->
+<div class="container py-4 text-center">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h3 class="fw-semibold text-primary mb-3">Ready to create something truly unique?</h3>
+            <p class="text-muted mb-4">Let's collaborate to bring your custom design dreams to reality</p>
+            <a href="/contact" class="btn btn-primary px-4 py-2 fw-semibold">Start Your Custom Project</a>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+<!-- Hero Section -->
+<div class="container-fluid py-4 text-center bg-white">
+    <div class="container py-3">
+        <h1 class="display-5 fw-bold text-primary mb-3">Welcome to WhiteSpace Studio</h1>
+        <p class="lead text-muted">Innovative Designs | Aesthetic Interiors | Quality Craftsmanship</p>
+        <a href="/contact" class="btn btn-primary px-4 py-2 fw-semibold mt-2">Get in Touch</a>
+    </div>
+</div>
+
+<!-- Services Section -->
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-12 text-center mb-4">
+            <h2 class="fw-bold text-primary">Our Services</h2>
+            <p class="text-muted">Transform your space with our expert solutions</p>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card border-0 shadow-sm h-100">
+                <img src="{% static 'p0.jpg' %}" class="card-img-top rounded-top" alt="Interior Design">
+                <div class="card-body text-center">
+                    <h4 class="fw-semibold text-primary">Interior Design</h4>
+                    <p class="small text-muted">Elegant and customized interiors to match your style</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card border-0 shadow-sm h-100">
+                <img src="{% static 'p2.jpg' %}" class="card-img-top rounded-top" alt="Exterior Design">
+                <div class="card-body text-center">
+                    <h4 class="fw-semibold text-primary">Exterior Design</h4>
+                    <p class="small text-muted">Stylish and durable exterior designs for every space</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card border-0 shadow-sm h-100">
+                <img src="{% static 'p3.jpg' %}" class="card-img-top rounded-top" alt="Customization">
+                <div class="card-body text-center">
+                    <h4 class="fw-semibold text-primary">Customization</h4>
+                    <p class="small text-muted">Tailored solutions to bring your vision to life</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- About Section -->
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body text-center p-4">
+                    <h2 class="fw-bold text-primary mb-3">About Us</h2>
+                    <p class="text-muted">At WhiteSpace Studio, we specialize in transforming spaces into timeless works of art. Our team of experts ensures the highest quality and attention to detail in every project.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA Section -->
+<div class="container py-4 text-center">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <h3 class="fw-semibold text-primary mb-3">Ready to transform your space?</h3>
+            <a href="/contact" class="btn btn-primary px-4 py-2 fw-semibold">Contact Us Today</a>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

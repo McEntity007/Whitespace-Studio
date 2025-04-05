@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock title %} | WhiteSpace Studio</title>
+    <!-- Load Bootstrap CSS first -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Then load Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS only for logo -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+      
+      /* Custom logo styling only */
+      .navbar-brand.custom-logo {
+          font-family: 'Poppins', sans-serif ;
+          font-size: 1.8rem ;
+          letter-spacing: 1px ;
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1) ;
+          color: #0d6efd ;
+      }
+      
+      .navbar-brand.custom-logo:hover {
+          transform: scale(1.05) ;
+      }
+
+      .footer-logo.d-block{
+        font-family: 'Poppins', sans-serif ;
+          font-size: 1.8rem ;
+          letter-spacing: 1px ;
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1) ;
+          color: #0d6efd ;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top py-2 shadow-sm">
+        <div class="container">
+            <a class="navbar-brand custom-logo" href="/">WhiteSpace Studio</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/' %}active fw-bold text-primary{% endif %}" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/about' %}active fw-bold text-primary{% endif %}" href="/about">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle {% if '/services' in request.path %}active fw-bold text-primary{% endif %}" href="#" role="button" data-bs-toggle="dropdown">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu border-0 shadow">
+                            <li><a class="dropdown-item {% if request.path == '/services/interior' %}active{% endif %}" href="/services/interior">Interior</a></li>
+                            <li><a class="dropdown-item {% if request.path == '/services/exterior' %}active{% endif %}" href="/services/exterior">Exterior</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item {% if request.path == '/services/customization' %}active{% endif %}" href="/services/customization">Customization</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/contact' %}active fw-bold text-primary{% endif %}" href="/contact">Contact Us</a>
+                    </li>
+                </ul>
+
+                <div class="d-flex gap-2 align-items-center">
+                    {% if user.is_authenticated %}
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="me-1">Welcome, {{ user.username }}</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li> 
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                        </ul>
+                    </div>
+                    {% else %}
+                        <a href="/login" class="btn btn-outline-primary rounded-pill px-3">Login</a>
+                        <a href="/register" class="btn btn-primary rounded-pill px-3">Register</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show mb-0 rounded-0" role="alert">
+            <div class="container">
+                <strong>{{ message }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        </div>
+        {% endfor %}
+    {% endif %}
+
+    {% block body %}{% endblock body %}
+
+    <!-- Footer Section -->
+    <footer class="bg-light border-top py-4 mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <span class="footer-logo d-block mb-3">WhiteSpace Studio</span>
+                    <p class="text-muted">Transforming spaces into works of art with innovative design solutions and exceptional craftsmanship.</p>
+                    <div class="mt-3">
+                        <a href="#" class="text-decoration-none text-secondary me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-decoration-none text-secondary me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-decoration-none text-secondary me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-decoration-none text-secondary"><i class="fab fa-linkedin fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="/" class="text-decoration-none text-muted">Home</a></li>
+                        <li class="mb-2"><a href="/about" class="text-decoration-none text-muted">About</a></li>
+                        <li class="mb-2"><a href="/services/interior" class="text-decoration-none text-muted">Services</a></li>
+                        <li><a href="/contact" class="text-decoration-none text-muted">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="mb-3">Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="/services/interior" class="text-decoration-none text-muted">Interior Design</a></li>
+                        <li class="mb-2"><a href="/services/exterior" class="text-decoration-none text-muted">Exterior Design</a></li>
+                        <li class="mb-2"><a href="/services/customization" class="text-decoration-none text-muted">Custom Solutions</a></li>
+                        <li><a href="/contact" class="text-decoration-none text-muted">Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="mb-3">Contact Us</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Design Street, Ahmedabad</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-envelope me-2"></i> contact@studio.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center pt-3 border-top">
+                    <p class="text-muted mb-0">&copy; 2025 WhiteSpace Studio. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

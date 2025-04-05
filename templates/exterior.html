@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Exterior Design{% endblock title %}
+
+{% block body %}
+<!-- Hero Section -->
+<div class="container-fluid py-4 bg-white">
+    <div class="container text-center py-3">
+        <h1 class="display-5 fw-bold text-primary mb-2">Exterior Design</h1>
+        <p class="lead text-muted">Make a statement with eye-catching exterior designs</p>
+    </div>
+</div>
+
+<!-- Service Details -->
+<div class="container py-4">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="card border-0 shadow-sm">
+                <img src="{% static 'p2.jpg' %}" class="card-img-top rounded-top" alt="Exterior Design">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="ps-lg-4">
+                <h2 class="fw-bold text-primary mb-3">Redefine Your Building's Appearance</h2>
+                <p class="text-muted mb-4">Our exterior design services ensure a strong visual impact while enhancing functionality and durability.</p>
+                
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2">
+                        <i class="fas fa-check-circle text-primary me-2"></i>
+                        <span class="text-muted">Architectural Facade Styling</span>
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check-circle text-primary me-2"></i>
+                        <span class="text-muted">Landscape Design</span>
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check-circle text-primary me-2"></i>
+                        <span class="text-muted">Lighting and Material Selection</span>
+                    </li>
+                </ul>
+                
+                <a href="/contact" class="btn btn-primary px-4 py-2 fw-semibold">Book a Consultation</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Design Features Section -->
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <h3 class="fw-semibold text-primary mb-3">Exterior Design Features</h3>
+                    <div class="row">
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="text-center">
+                                <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                                    <i class="fas fa-building text-primary fa-2x"></i>
+                                </div>
+                                <h5 class="mt-3 fw-semibold">Facade Design</h5>
+                                <p class="small text-muted">Transform your building's exterior with innovative facade solutions</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="text-center">
+                                <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                                    <i class="fas fa-tree text-primary fa-2x"></i>
+                                </div>
+                                <h5 class="mt-3 fw-semibold">Landscaping</h5>
+                                <p class="small text-muted">Beautiful outdoor spaces that complement your architecture</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                                    <i class="fas fa-lightbulb text-primary fa-2x"></i>
+                                </div>
+                                <h5 class="mt-3 fw-semibold">Lighting Design</h5>
+                                <p class="small text-muted">Strategic lighting to enhance your property's nighttime appeal</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Portfolio Preview -->
+{% comment %} <div class="container py-4">
+    <h3 class="fw-semibold text-primary text-center mb-4">Our Exterior Design Projects</h3>
+    <div class="row g-3">
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm">
+                <img src="https://source.unsplash.com/600x400/?modern-house" class="card-img-top" alt="Modern House">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm">
+                <img src="https://source.unsplash.com/600x400/?contemporary-building" class="card-img-top" alt="Contemporary Building">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm">
+                <img src="https://source.unsplash.com/600x400/?landscape-design" class="card-img-top" alt="Landscape Design">
+            </div>
+        </div>
+    </div>
+</div> {% endcomment %}
+
+<!-- CTA Section -->
+<div class="container py-4 text-center">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h3 class="fw-semibold text-primary mb-3">Ready to transform your property's exterior?</h3>
+            <p class="text-muted mb-4">Let's create an impressive first impression together</p>
+            <a href="/contact" class="btn btn-primary px-4 py-2 fw-semibold">Get Started Today</a>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
